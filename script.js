@@ -66,6 +66,25 @@ window.addEventListener('mousemove', e => {
 window.addEventListener('mousedown', () => mouse.isPressed = true);
 window.addEventListener('mouseup', () => mouse.isPressed = false);
 
+// Touch Handling
+window.addEventListener('touchstart', e => {
+    mouse.x = e.touches[0].clientX;
+    mouse.y = e.touches[0].clientY;
+    mouse.isPressed = true;
+    mouse.moved = true;
+}, { passive: false });
+
+window.addEventListener('touchmove', e => {
+    mouse.x = e.touches[0].clientX;
+    mouse.y = e.touches[0].clientY;
+    mouse.moved = true;
+    e.preventDefault();
+}, { passive: false });
+
+window.addEventListener('touchend', () => {
+    mouse.isPressed = false;
+});
+
 // Resizing
 function resize() {
     canvas.width = window.innerWidth;

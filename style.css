@@ -34,6 +34,7 @@ body {
         url('https://www.transparenttextures.com/patterns/stardust.png');
     /* Subtle stardust texture */
     background-color: #020205;
+    touch-action: none;
 }
 
 #gameCanvas {
