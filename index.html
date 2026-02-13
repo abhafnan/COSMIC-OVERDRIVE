@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON STRIKE | Cosmic Defense</title>
+    <meta name="description" content="A high-octane neon-themed space shooter built with HTML5 Canvas and Javascript.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;600&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- HUD -->
+        <div id="hud">
+            <div class="stat-box">
+                <span class="label">SCORE</span>
+                <span id="score-val">00000</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">HIGH SCORE</span>
+                <span id="high-score-val">00000</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">LEVEL</span>
+                <span id="level-val">1</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">HEALTH</span>
+                <div class="health-bar-container">
+                    <div id="health-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="overlay" class="active">
+            <div class="content">
+                <h1 class="glitch" data-text="NEON STRIKE">NEON STRIKE</h1>
+                <p class="subtitle">DEFEND THE NEON SECTOR</p>
+                <div class="instructions">
+                    <div class="control-item">
+                        <span class="key">WASD</span> / <span class="key">Arrows</span> or <span
+                            class="key">Mouse</span> to Move
+                    </div>
+                    <div class="control-item">
+                        <span class="key">Space</span> or <span class="key">Left Click</span> to Fire
+                    </div>
+                </div>
+                <button id="start-btn">INITIALIZE SYSTEM</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="game-over" class="hidden">
+            <div class="content">
+                <h2 class="danger-text">CRITICAL FAILURE</h2>
+                <div class="final-stats">
+                    <p>Final Score: <span id="final-score">0</span></p>
+                </div>
+                <button id="restart-btn">REBOOT SYSTEM</button>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+        <div id="powerup-notice">POWER-UP ACTIVATED!</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
